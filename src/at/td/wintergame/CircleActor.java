@@ -3,19 +3,14 @@ package at.td.wintergame;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
-public class CircleActor implements Actor{
-    private double x,y;
+public class CircleActor extends AbstractActor{
 
-    public CircleActor(double x, double y) {
-        this.x = x;
-        this.y = y;
+    public CircleActor(MoveStrategy moveStrategy) {
+        super(moveStrategy);
     }
 
-    public void update (GameContainer gc, int delta){
-        this.x++;
-    }
-
-    public void render (Graphics graphics){
-        graphics.drawOval((float) this.x, (float) this.y, 20, 20);
+    @Override
+    public void render(Graphics graphics) {
+        graphics.drawOval(this.moveStrategy.getX(), this.moveStrategy.getY(), 10, 10);
     }
 }

@@ -17,9 +17,13 @@ public class MainGame extends BasicGame {
 
     @Override
     public void init(GameContainer gc) throws SlickException {
-        CircleActor ca1 = new CircleActor(100, 100);
-        CircleActor ca2 = new CircleActor(100, 200);
-        RectangleActor ra1 = new RectangleActor(60, 500);
+
+        MoveStrategy mr1 = new MoveRight(10, 10, 0.5f);
+        MoveStrategy mr2 = new MoveLeft(500, 50, 0.3f);
+        MoveStrategy mr3 = new MoveRight(10, 350, 0.5f);
+        CircleActor ca1 = new CircleActor(mr1);
+        CircleActor ca2 = new CircleActor(mr2);
+        RectangleActor ra1 = new RectangleActor(mr3);
 
         this.actors.add(ca1);
         this.actors.add(ca2);

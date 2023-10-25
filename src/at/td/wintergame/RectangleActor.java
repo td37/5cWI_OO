@@ -3,20 +3,14 @@ package at.td.wintergame;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
-public class RectangleActor implements Actor{
-    private double x, y;
+public class RectangleActor extends AbstractActor{
 
-    public RectangleActor(double x, double y) {
-        this.x = x;
-        this.y = y;
+    public RectangleActor(MoveStrategy moveStrategy) {
+       super(moveStrategy);
     }
 
-
-    public void update (GameContainer gc, int delta){
-        this.x++;
-    }
 
     public void render (Graphics graphics){
-        graphics.drawRect((float) this.x, (float) this.y, 20, 20);
+        graphics.drawRect(moveStrategy.getX(), moveStrategy.getY(), 20, 20);
     }
 }
