@@ -9,6 +9,7 @@ import java.util.List;
 public class MainGame extends BasicGame {
 
     private List<Actor> actors = new ArrayList<>();
+    private Player player = new Player();
 
 
     public MainGame(String title) {
@@ -21,13 +22,23 @@ public class MainGame extends BasicGame {
         MoveStrategy mr1 = new MoveRight(10, 10, 0.5f);
         MoveStrategy mr2 = new MoveLeft(500, 50, 0.3f);
         MoveStrategy mr3 = new MoveRight(10, 350, 0.5f);
-        CircleActor ca1 = new CircleActor(mr1);
-        CircleActor ca2 = new CircleActor(mr2);
-        RectangleActor ra1 = new RectangleActor(mr3);
+        MoveStrategy toggle1 = new ToggleStrategy ();
+        MoveStrategy toggle2 = new ToggleStrategy ();
+        MoveStrategy toggle3 = new ToggleStrategy ();
+        CircleActor ca1 = new CircleActor(toggle1);
+        CircleActor ca2 = new CircleActor(toggle2);
+        RectangleActor ra1 = new RectangleActor(toggle3);
+
+
+        this.player.addObserver(ca1);
+        this.player.addObserver(ca2);
+        this.player.addObserver(ra1);
 
         this.actors.add(ca1);
         this.actors.add(ca2);
         this.actors.add(ra1);
+        this.actors.add(player);
+
 
     }
 
