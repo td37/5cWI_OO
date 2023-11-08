@@ -5,6 +5,7 @@ import org.newdawn.slick.tests.AnimationTest;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.RandomAccess;
 
 public class MainGame extends BasicGame {
 
@@ -29,6 +30,18 @@ public class MainGame extends BasicGame {
         CircleActor ca2 = new CircleActor(toggle2);
         RectangleActor ra1 = new RectangleActor(toggle3);
 
+        for (int i = 0; i < 10; i++) {
+            this.actors.add(RandomActorFactory.getRandomActor());
+        }
+
+        CounterSingleton cs1 = CounterSingleton.getInstance();
+        CounterSingleton cs2 = CounterSingleton.getInstance();
+
+        cs1.increaseCounter();
+        cs2.increaseCounter();
+
+        System.out.println(cs1.getCounter());
+        System.out.println(cs2.getCounter());
 
         this.player.addObserver(ca1);
         this.player.addObserver(ca2);

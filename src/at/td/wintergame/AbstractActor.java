@@ -16,5 +16,4 @@ public abstract class AbstractActor implements Actor {
         moveStrategy.update(delta);
     }
 
-
 }
