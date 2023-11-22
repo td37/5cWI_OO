@@ -1,22 +1,24 @@
 package at.td.homeControl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Thermometer {
-    private boolean tempOverTwenty = false;
-    private List<Observer> observers;
+    private boolean tempOverTwenty = true;
+    private List<Observer> observers = new ArrayList<>();
 
+    public void informAll() {
+        if (tempOverTwenty) {
+            for (Observer observer : observers) {
+                observer.informTempOver20();
+            }
 
-    public void isOverTwenty(){
-        if(tempOverTwenty){
-            obser
+        } else {
+            System.out.println("Nothing is happening, temperature unter 20°C");
         }
     }
-    public void informAll(){
 
-    }
-
-    public void addObserver(Observer observer){
+    public void addObserver(Observer observer) {
         this.observers.add(observer);
     }
 }
