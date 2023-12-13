@@ -1,4 +1,4 @@
-package at.td.SuperCars;
+package at.td.DesingPatterns.SuperCars;
 
 public class HighAlpin implements Strategy{
     @Override

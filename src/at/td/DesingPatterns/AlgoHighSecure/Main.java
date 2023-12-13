@@ -1,4 +1,4 @@
-package at.td.AlgoHighSecure;
+package at.td.DesingPatterns.AlgoHighSecure;
 
 public class Main {
     public static void main(String[] args) {

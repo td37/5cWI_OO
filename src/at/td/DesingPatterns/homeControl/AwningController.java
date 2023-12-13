@@ -1,4 +1,4 @@
-package at.td.homeControl;
+package at.td.DesingPatterns.homeControl;
 
 public class AwningController implements Observer{
 
