@@ -1,20 +1,16 @@
 package at.td.sorter;
 
-public class Insertation implements Algorithm{
+public class Insertation implements Algorithm {
     @Override
     public int[] doSort(int[] data) {
-        int newValue;
-        int range = 1;
-        int swap;
-        for (int i = 0; i < data.length; i++) {
-            newValue = i+1;
-            for (int j = 0; j < range; j++) {
-                if(data[j]<data[newValue])
-                    swap = data[i];
-                data[i] = data[minIndex];
-                data[minIndex] = swap;
+        for (int i = 1; i < data.length; i++) {
+            int newValue = data[i];
+            int j = i;
+            while (j>0 && data[j-1]>newValue){
+                data[j] = data[j-1];
+                j--;
             }
-
+            data[j] = newValue;
         }
 
         return data;

@@ -7,9 +7,10 @@ public class Main {
 
         Bubble bubble = new Bubble();
         Selection selection = new Selection();
+        Insertation insertation = new Insertation();
 
         Sorter sorter = new Sorter();
-        sorter.setAlgorithm(selection);
+        sorter.setAlgorithm(insertation);
         DataGenerator.printArray(data);
         //int[] dat = {5, 3, 7, 1, 2};
         int[] result = sorter.doSort(data);
