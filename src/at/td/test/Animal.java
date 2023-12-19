@@ -1,6 +1,6 @@
 package at.td.test;
 
 public interface Animal {
-    public abstract void run();
+    public void run();
     public String getName();
 }
